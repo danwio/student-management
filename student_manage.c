@@ -1,0 +1,68 @@
+#include "student_manage.h"
+
+// 主函数：菜单驱动程序
+int main() {
+    Student stuArr[100];  // 最多存储100个学生
+    int stuCount = 0;     // 当前学生数量
+    int choice;
+
+    while (1) {
+        // 菜单界面
+        printf("\n===== 学生管理系统 =====\n");
+        printf("1. 添加学生\n");
+        printf("2. 删除学生\n");
+        printf("3. 查询学生\n");
+        printf("4. 修改学生信息\n");
+        printf("5. 显示所有学生\n");
+        printf("0. 退出系统\n");
+        printf("========================\n");
+        printf("请输入操作选项：");
+        scanf("%d", &choice);
+
+        // 选择分支
+        switch (choice) {
+            case 1:
+                addStudent(stuArr, &stuCount);
+                break;
+            case 2:
+                deleteStudent(stuArr, &stuCount);
+                break;
+            case 3:
+                queryStudent(stuArr, stuCount);
+                break;
+            case 4:
+                modifyStudent(stuArr, stuCount);
+                break;
+            case 5:
+                showAllStudents(stuArr, stuCount);
+                break;
+            case 0:
+                printf("退出系统成功！\n");
+                exit(0);
+            default:
+                printf("输入错误，请重新选择！\n");
+        }
+    }
+    return 0;
+}
+
+// 空函数骨架（供协作同学实现）
+void addStudent(Student *stuArr, int *stuCount) {
+    // TODO：协作同学补充添加学生逻辑
+}
+
+void deleteStudent(Student *stuArr, int *stuCount) {
+    // TODO：协作同学补充删除学生逻辑
+}
+
+void queryStudent(Student *stuArr, int stuCount) {
+    // TODO：协作同学补充查询学生逻辑
+}
+
+void modifyStudent(Student *stuArr, int stuCount) {
+    // TODO：协作同学补充修改学生信息逻辑
+}
+
+void showAllStudents(Student *stuArr, int stuCount) {
+    // TODO：协作同学补充显示所有学生逻辑
+}
